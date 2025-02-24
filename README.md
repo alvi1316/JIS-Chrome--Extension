@@ -64,7 +64,7 @@ sequenceDiagram
 ![Screenshot 2025-02-24 172419](https://github.com/user-attachments/assets/0252f099-0e2b-47db-af33-9dd65970289d)
 
 
-- Click on view job index to see all scraped jobs. This page lets users edit each row and save application status.
+- Click on `View Job Index` to see all scraped jobs. This page lets users edit each row and save application status.
 
 ![Screenshot 2025-02-24 172521](https://github.com/user-attachments/assets/e8e44155-f649-49bc-94f5-c3ce1154a4f7)
 
