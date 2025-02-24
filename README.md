@@ -31,7 +31,7 @@ sequenceDiagram
     scraper ->> service-worker: sendMessage('addScrappedData')
     deactivate scraper 
     activate service-worker
-    service-worker ->> index: sendMessage('getLatestJsonData')
+    service-worker ->> jobindex: sendMessage('getLatestJsonData')
     deactivate service-worker
     end
 
