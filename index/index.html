@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset='UTF-8' />
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body class="col gap-5">
+        <h2 class="m-0">JOB INDEX</h2>
+        <div id="default_columns_header" class="row w-100">
+            <h3 class="m-0">Columns:</h3>
+        </div>
+        <div id="default_columns" class="col gap-5 w-100">
+        </div>
+        <div id="added_columns_header" class="row w-100">
+            <h3 class="m-0">Added Columns:</h3>
+        </div>
+        <div id="added_columns" class="row gap-5 flex-wrap w-100">
+        </div>
+        <div class="row w-100 d-none">
+            <h3 class="m-0">Add New Column:</h3>
+        </div>
+        <div class="col gap-5 w-100 d-none">
+            <div class="row gap-5">
+                <label>Column Name:</label>
+                <input id="column_name" type="text" />
+                <label>Type:</label>
+                <select id="column_type">
+                    <option value="text" selected>Text</option>
+                    <option value="select">Select</option>
+                </select>
+                <input id="column_add" type="button" title="Add" value="&#10010;" />
+            </div>
+
+            <div id="add_option_wrapper" class="col gap-5 border-dark solid-1 p-5 d-none">
+                <div class="row gap-5">
+                    <label>Add Option:</label>
+                    <input id="option_name" type="text" />
+                    <input id="option_add" type="button" title="Add" value="&#10010;" />
+                </div>
+                <div>Added Options:</div>
+                <div id="option_values" class="flex-wrap row gap-5">
+                </div>
+            </div>
+        </div>
+        <div class="col gap-5 w-100">
+            <div class="row">    
+                <input class="w-100 custom-button-style" id="scrape_job" value="Scrape Job" type="button" />
+                <div id="scrape_loading" class="d-none"></div>
+            </div>
+            <div class="row w-100">
+                <input class="w-100 custom-button-style" id="view_index" value="View Job Index" type="button" />
+            </div>
+            <div class="row w-100">
+                <input class="w-100 custom-button-style" id="clear_storage" value="Clear Storage" type="button" />
+            </div>
+        </div>
+        <script src="DataObserver.js" type="module"></script>
+        <script src="index.js" type="module"></script>
+    </body>
+
+</html>
