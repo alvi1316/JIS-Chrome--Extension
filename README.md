@@ -9,6 +9,7 @@ This extenstion lets users scrape job description from LinkedIn. In future it wi
 - The extension has `index.js` which works with `index.html` as a popup script to handle UI events.
 - The extension has `jobindex.html` and `jobindex.js` responsible for searching and updating existing data. 
 
+```mermaid
 sequenceDiagram
 
     par Get Initial Data
@@ -34,4 +35,4 @@ sequenceDiagram
     service-worker ->> jobindex: sendResponse(latest-Data)
     deactivate service-worker
     end
-
+```
