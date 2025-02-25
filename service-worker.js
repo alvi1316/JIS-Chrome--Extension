@@ -26,40 +26,28 @@ const setJsonData = async (JSON_DATA) => {
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.message === "getJsonData") {
+    if (request.message === "get_all_scrape_row") {
         getJsonData().then(JSON_DATA => sendResponse(JSON_DATA))
         return true
     }
-
-    if (request.message === "appendAddedColumn") {
-        getJsonData().then(JSON_DATA => {
-            JSON_DATA.addedColumns.push(request.data)
-            setJsonData(JSON_DATA)
-            sendResponse(JSON_DATA)
-        })
-        return true
-    }
-
-    if (request.message === "addScrappedData") {
+    if (request.message === "add_scrape_row") {
         getJsonData().then(JSON_DATA => {
             let addedValue = JSON_DATA.addedColumns.map(_ => "")
             JSON_DATA.rows.push([...request.data, ...addedValue])
             setJsonData(JSON_DATA)
-            chrome.runtime.sendMessage({message: "getLatestJsonData", data: JSON_DATA})
+            chrome.runtime.sendMessage({message: "notify_all_scrape_row", data: JSON_DATA})
         })
         return true
     }
-
-    if(request.message === "editJsonIndex") {
+    if(request.message === "update_scrape_row") {
         getJsonData().then(JSON_DATA => {
             JSON_DATA.rows[request.index] = request.data
             setJsonData(JSON_DATA)
-            sendResponse(JSON_DATA)
+            chrome.runtime.sendMessage({message: "notify_all_scrape_row", data: JSON_DATA})
         })
         return true
     }
-
-    if(request.message === "clearStorage") {
+    if(request.message === "clear_storage") {
         chrome.storage.local.clear()
     }
 });

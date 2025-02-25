@@ -1,10 +1,10 @@
 {
   "name": "Job Index",
   "icons": {
-   "16": "./icons/Job Description Scraper 16.png",
-   "32": "./icons/Job Description Scraper 32.png",
-   "48": "./icons/Job Description Scraper 48.png",
-   "128": "./icons/Job Description Scraper 128.png"
+   "16": "./icons/icon16.png",
+   "32": "./icons/icon32.png",
+   "48": "./icons/icon48.png",
+   "128": "./icons/icon128.png"
  },
   "description": "A scraper for job index logs",
   "version": "1.0",
@@ -22,13 +22,17 @@
         "https://www.linkedin.com/jobs/collections/*", 
         "https://www.linkedin.com/jobs/search/*"
       ],
-      "js": ["linkedin-scrapper-1.js"]
+      "js": ["./scrappers/linkedin-scrapper-1.js"]
     },
     {
       "matches": [
         "https://www.linkedin.com/jobs/view/*"
       ],
-      "js": ["linkedin-scrapper-2.js"]
+      "js": ["./scrappers/linkedin-scrapper-2.js"]
+    },
+    {
+      "matches": ["https://www.indeed.com/*"],
+      "js": ["./scrappers/indeed-scrapper-1.js"]
     }
   ],
   "permissions": [

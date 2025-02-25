@@ -37,10 +37,6 @@ body {
     padding: 5px;
 }
 
-.flex-wrap {
-    flex-wrap: wrap;
-}
-
 .d-none {
     display: none;
 }
@@ -80,18 +76,96 @@ body {
     color: red;
 }
 
-.align-stretch {
+.justify-start {
+    justify-content: start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-stretch {
     justify-content: stretch;
 }
 
-.custom-row-style {
-    border: 1px solid rgb(120, 120, 120);
-    background-color: rgb(243, 243, 243);
-    padding: 2px;
+.align-start {
+    align-content: start;
+}
+
+.align-center {
+    align-content: center;
+}
+
+.align-stretch {
+    align-items: stretch;
 }
 
 .custom-button-style {
-    background-color: rgb(57, 222, 189);
-    border-color: rgb(34, 135, 115);
-    cursor: pointer;
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 7px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.custom-button-style:hover {
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.custom-button-style:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.linkedin {
+    background-color: rgb(10, 102, 194);
+}
+.linkedin:hover {
+    background-color: rgb(6, 69, 132);
+}
+
+.indeed {
+    background-color: rgb(0, 58, 155);
+}
+.indeed:hover {
+    background-color: rgb(0, 29, 80);
+}
+
+.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+.disabled:hover {
+    background-color: grey;
+    transform: translateY(0px);
+}
+.disabled:active {
+    background-color: grey;
+    transform: translateY(0px);
 }
