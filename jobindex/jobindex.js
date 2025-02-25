@@ -1,4 +1,4 @@
-import DataObserver from "../index/DataObserver.js"
+import DataObserver from "../DataObserver.js"
 
 const dataObserver = DataObserver({})
 
@@ -24,13 +24,7 @@ const saveRowUI = element => {
     element.parentNode.children.item(1).classList.remove("d-none")
 
     let index = element.parentNode.children.item(2).value
-    chrome.runtime.sendMessage({message: "editJsonIndex", index: index, data: data}, response => {
-        if(response == null) {
-            return
-        }
-        dataObserver.setData(() => response)
-        dataObserver.notify()
-    });
+    chrome.runtime.sendMessage({message: "update_scrape_row", index: index, data: data});
 }
 
 const renderTableHeaderUI = headers => {
@@ -99,7 +93,7 @@ dataObserver.addListener(data => {
 dataObserver.addListener(data => renderSearchOptionUI(data.defaultColumns.map(e => e.columnName)))
 
 document.addEventListener("DOMContentLoaded", () => {
-    chrome.runtime.sendMessage({message: "getJsonData"}, response => {
+    chrome.runtime.sendMessage({message: "get_all_scrape_row"}, response => {
         if(response == null) {
             return
         }
@@ -108,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-        if (request.message === "getLatestJsonData") {
+        if (request.message === "notify_all_scrape_row") {
             if(request.data == null) {
                 return
             }
